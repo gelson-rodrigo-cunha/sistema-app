@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+ 
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h6>Notícias cadastradas</h6>
+
+
+
+       <ion-list *ngFor="let noticias of noticia">
+             <ion-item-sliding>
+                   <ion-item>
+                         <h1 *ngIf="nome">{{noticia.nome}}</h1>
+                         <p>{{noticia.tituloNoticia}}</p>
+                   </ion-item>
+                   <ion-item-options side="right">
+                         <button ion-button color="danger" (click)="deletarPerfil(user)">
+                               Deletar
+                         </button>
+                   </ion-item-options>
+                   <ion-item-options side="left">
+                         <button ion-button color="secondary" (click)="editarPerfil(user)">
+                               Editar
+                         </button>
+                   </ion-item-options>
+             </ion-item-sliding>
+       </ion-list>
+
+  <!--<button ion-button color="primary" (click)="logout()">Logout</button>-->
+</ion-content>
